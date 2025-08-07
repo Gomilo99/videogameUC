@@ -1,13 +1,15 @@
 using UnityEngine;
 using Enemys;
 
-public class GameManager : MonoBehaviour
+public class GameController : MonoBehaviour
 {
+    private Monster Ogre;
+    private Alien Xenomorph;
     private void Awake()
     {
         Debug.Log("PRIMERO SE EJECUTA AWAKE");
     }
-    void Start()
+    private void Start()
     {
         Monster Ogre = new Monster("Ogro Malvado");
         Alien Xenomorph = new Alien("Alien Xenomorfico");
