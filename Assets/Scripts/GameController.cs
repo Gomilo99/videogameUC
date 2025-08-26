@@ -1,43 +1,38 @@
 using UnityEngine;
-using Enemys;
+using Animals;
 
 public class GameController : MonoBehaviour
 {
-    private Monster Ogre;
-    private Alien Xenomorph;
+    private Animal myDog;
+    private Animal myCat;
     private void Awake()
     {
         Debug.Log("PRIMERO SE EJECUTA AWAKE");
     }
+    
+
+    // Start is called before the first frame update
     private void Start()
     {
-        Monster Ogre = new Monster("Ogro Malvado");
-        Alien Xenomorph = new Alien("Alien Xenomorfico");
+        // Crear instancias de Dog y Cat
+        myDog = new Dog();
+        myDog.Name = "Rex";
+        myDog.ServeFood();  // Llama al método de la clase Dog
+        myDog.ShowFood();   // Muestra la comida
 
-        Ogre.AddSkill("Fuerza Brutal");
-        Ogre.AddSkill("Piel de Pidra");
-        Ogre.AddWeak("Luz Solar");
-        Ogre.AddWeak("Fuego");
+        myCat = new Cat();
+        myCat.Name = "Miau";
+        myCat.ServeFood();  // Llama al método de la clase Cat
+        myCat.ShowFood();   // Muestra la comida
 
-        Xenomorph.AddSkill("Sangre Acida");
-        Xenomorph.AddSkill("Velocidad de Vertigo");
-        Xenomorph.AddWeak("Fuego");
+        
+    }
 
-        Debug.Log("--- Info enemigos generados ---");
-        Ogre.ShowSkills();
-        Ogre.ShowWeaks();
-
-        Debug.Log("");
-        Xenomorph.ShowSkills();
-        Xenomorph.ShowWeaks();
-
-        Debug.Log("--- Ataque de Enemigos ---");
-        Ogre.Attack();
-        Xenomorph.Attack();
-        Debug.Log("");
-
-        Debug.Log("--- Mensajes de Derrota ---");
-        Ogre.DefeatText();
-        Xenomorph.DefeatText();
+    // Update is called once per frame
+    private void Update()
+    {
+        // Hacer que los animales hablen
+        myDog.Talk();
+        myCat.Talk();
     }
 }

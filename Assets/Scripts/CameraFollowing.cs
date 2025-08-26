@@ -14,7 +14,7 @@ public class CameraFollowing : MonoBehaviour
         {
             Debug.LogError("Error - Objetivo no Asignado");
         }
-        Vector3 desiredPosition = new Vector3(target.position.x + Camera.position.x, Camera.position.y, offset.z);
+        Vector3 desiredPosition = new Vector3(target.position.x + 4 , Camera.position.y, offset.z);
         // Usamos Lerp (interpolación lineal) para mover la cámara suavemente desde su posición actual hacia la posición deseada.
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
